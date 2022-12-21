@@ -12,7 +12,7 @@ public class SumOfDivided {
             }
         }
 
-        for (int test = 2; test < max / 2; test++) {
+        for (int test = 2; test <= max; test++) {
 
             if (!isSimple(test)) continue;
 
