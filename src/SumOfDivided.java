@@ -5,6 +5,14 @@ public class SumOfDivided {
 
         int max = 0;
         for (int i = 0; i < l.length; i++) {
+            if (isSimple(l[i])) {
+                if (l[i] < 0) {
+                    if (-l[i]*2 > max) max = -l[i]*2;
+                } else {
+                    if (l[i]*2 > max) max = l[i]*2;
+                }
+                continue;
+            }
             if (l[i] < 0) {
                 if (-l[i] > max) max = -l[i];
             } else {
@@ -12,7 +20,7 @@ public class SumOfDivided {
             }
         }
 
-        for (int test = 2; test <= max; test++) {
+        for (int test = 2; test <= max/2; test++) {
 
             if (!isSimple(test)) continue;
 
